@@ -3,7 +3,8 @@
 
 ####Overview
 	The goal of this project is helping geeks to get Zhihu.com's Questions easily.
-	Up to Now, this project includes only one module(or you can say a spider) called ZhihuSpiderQuestionID.
+	Up to Now, this project includes only one module(or you can say a spider) 
+	called ZhihuSpiderQuestionID.
 ================
 
 ####Requirements(developed with)
@@ -21,3 +22,14 @@
 	TODO
 ================
 
+####Notes of Modules
+#####Module1(ZhihuSpiderQuestionsID)
+	The purpose of this module is to download Zhihu questions' IDs as much 
+	as possible.
+	If you have own the ID of a question, you can easily constract a usable 
+	URL of this question under Zhihu.com.
+
+	eg. ID is 30462127, then URL is http://www.zhihu.com/question/30462127
+	
+	So, this Module do some preparations for the following modules to 
+	crawl all the content of questions.
