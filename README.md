@@ -3,7 +3,7 @@
 
 ####Requirements(developed with)
 	Ubuntu 14.04 LTS
-	Pyhton 2.7.6
+	Python 2.7.6
 	Scrapy 0.24.6
 ================
 
