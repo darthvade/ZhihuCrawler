@@ -64,7 +64,7 @@ class zhihu(scrapy.Spider):
 		#		print urls[i] + "--->" + items[i] 
 
 		if urls:
-			f = open('../QuestionsIDList.dat', 'a')
+			f = open('../CollectionData/QuestionsIDList.dat', 'a')
 			for i in urls:
 				f.write(i[10:] + '\n')
 			f.close()
