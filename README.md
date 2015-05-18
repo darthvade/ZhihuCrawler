@@ -17,7 +17,9 @@
 #####Module1(ZhihuSpiderQuestionsID)
 	1. git clone https://github.com/darthvade/ZhihuCrawler.git
 	2. cd ZhihuCrawler/ZhihuSpiderQuestionsID
-	3. scrapy crawl Zhihu
+	3. edit lines 45, 46 in crawler.py under /ZhihuSpider/spiders/
+	   change YOUR_EMAIL and YOUR_PASSWORD to your Zhihu's account.
+	4. scrapy crawl Zhihu
 #####Module2(ZhihuSpiderQuestionsInfos)
 	TODO
 ================
