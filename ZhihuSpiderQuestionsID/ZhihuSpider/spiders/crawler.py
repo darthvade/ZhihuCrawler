@@ -8,6 +8,9 @@ from scrapy.http import Request
 global xsrf
 xsrf = ''
 
+global idset
+idset = set()
+
 class zhihu(scrapy.Spider):
 	name = "Zhihu"
 	start_urls = ["http://www.zhihu.com"]
@@ -19,6 +22,15 @@ class zhihu(scrapy.Spider):
 	}
 
 	def start_requests(self):
+		global idset
+		f = open('../CollectionData/QuestionsIDList.dat', 'a+')
+		if f:
+			ids = f.readlines()
+			for i in ids:
+				if i not in idset:
+					idset.add(i)
+			f.close()
+
 		return [Request("http://www.zhihu.com/login", meta = {'cookiejar' : 1}, 
 				headers = self.headers, 
 				callback = self.post_login)]
@@ -63,10 +75,13 @@ class zhihu(scrapy.Spider):
 		#	for i in range(0, len(urls) - 1):
 		#		print urls[i] + "--->" + items[i] 
 
+		global idset
 		if urls:
 			f = open('../CollectionData/QuestionsIDList.dat', 'a')
 			for i in urls:
-				f.write(i[10:] + '\n')
+				if i[10:] + '\n' not in idset:
+					f.write(i[10:] + '\n')
+					idset.add(i)
 			f.close()
 
 		return [FormRequest("http://www.zhihu.com/log/questions",
